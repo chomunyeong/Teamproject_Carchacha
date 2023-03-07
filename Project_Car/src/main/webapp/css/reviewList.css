@@ -1,0 +1,70 @@
+@charset "UTF-8";
+#wrapper {
+	position: relative;
+	display: grid;
+/* 	grid-template-columns: 50px calc(100% - 50px); */
+	width: 100%;
+	height: auto;
+	background: url('../car_images/하늘.jpg') no-repeat top / auto 380px, #f5f6f7;
+	padding: 430px 0 50px;
+}
+#wrapper:after {
+	content:'나의 후기 내역';
+	position: absolute;
+	top:100px;
+	left:50%;
+	transform: translate(-50%);
+	font-size:2em;
+	
+}
+#wrapper > .myPage_menu {
+	position:relative;
+}
+#wrapper > .myPage_menu > div {
+	position: absolute;
+	top: -150px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+#wrapper > .myPage_menu > div > button {
+	border: 1px solid white;
+	padding: 10px 20px;
+	font-size: 15px;
+	background: rgba(255,255,255,.6);
+	cursor: pointer;
+}
+table {
+	margin: 0 auto;
+	background: rgb(228, 220, 211, .5);
+	border-collapse: collapse;
+	width: 80%;
+}
+th {
+	padding: 10px 0;
+}
+table td {
+	border: 1px solid white;
+	position: relative;
+	width: 100px;
+	text-align: center;
+}
+.a_box {
+	text-align: center;
+	padding-top: 30px;
+}
+.list_box {
+	text-align: center;
+	margin-top: 20px;
+}
+form > input, .list_box a:not(.list_num) {
+	background: #a5b99c;
+	padding: 2px 5px;
+	border-radius: 5px;
+	color: #f5f6f7;
+	border: none;
+	cursor: pointer;
+}
+.list_box a:not(.list_num):hover {
+	background: #72846a;
+}
+.list_num {color:#72846a;}

@@ -1,0 +1,29 @@
+@charset "UTF-8";
+body{
+	font-size: 10px;
+	background-color: #f5f6f7;
+    line-height: 1.5em;
+    color : #222;
+/*     display: flex; */
+/*     justify-content: center; */
+/*     align-items: center; */
+}
+
+.user{
+/*     width: 400px; */
+/*     margin: 0 auto; */
+	display: grid;
+    padding: 50px 100px 50px;
+/*     margin: 100px 0 50px; */
+    justify-content: center;
+/*     align-items: center; */
+/*     border: 2px solid black; */
+    font-size: 10px;
+    background:rgb(228, 220, 211, .5);
+}
+
+.field input:not(.id_check) {
+	height: 15px;
+	width: 200px;
+}
+

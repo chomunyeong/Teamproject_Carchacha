@@ -1,0 +1,91 @@
+@charset "UTF-8";
+html, body {margin: 0; padding: 0;}
+a {text-decoration: none;}
+@font-face {
+    font-family: 'Happiness-Sans-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/Happiness-Sans-Bold.woff2') format('woff2');
+    font-style: normal;
+    
+}
+@font-face {
+    font-family: 'Happiness-Sans-Title';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/Happiness-Sans-Title.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+* {font-family: 'Happiness-Sans-Title';}
+
+/* 상단 메뉴바 */
+.nav-menu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width:100%;
+	height: 50px;
+	transition: .5s;
+	background: #e4dcd3;
+	z-index:999;
+}
+
+.logo {
+	position: absolute;
+	left: 80px;
+	top:2.5px;
+	width: 100px;
+}
+
+/* 로그인, 회원가입 버튼 */
+.log_btn {
+	position: fixed;
+	top: 10px;
+	right: 20px;
+	z-index:9999;
+}
+.log_btn button {
+	background: transparent;
+	border: none;
+	color:white;
+	cursor: pointer;
+}
+.log_btn button:first-child {border-right: 1px solid white;}
+
+/* 네비바 목록 */
+nav {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: 30px;
+	position: absolute;
+	top:10px;
+	left:20%;
+	width:60%;
+	text-align: center;
+}
+nav > div {
+	padding-bottom: 5px;
+	overflow: hidden;
+	transition: .5s;
+}
+nav p, nav p:nth-child(1) > a {
+	color: white;
+	text-decoration: none;
+	font-size:18px;
+	text-shadow: 0 0 10px rgba(146, 131, 115, .2);
+	cursor: pointer;
+	margin-top:2px;
+}
+nav p:nth-child(2) {
+	display: grid;
+}
+nav p:nth-child(2) > a {
+	color: white;
+	text-decoration: none;
+	font-size: 16px;
+	padding: 5px 0;
+}
+/* 모션 */
+nav > div:hover:not(div:nth-child(1), div:nth-child(2)) {
+	height:100px;
+	overflow:visible;
+	background: #e4dcd3;
+	padding: 10px 0 20px;
+}

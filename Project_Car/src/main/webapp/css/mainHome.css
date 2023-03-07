@@ -1,0 +1,574 @@
+@charset "UTF-8";
+
+::-webkit-scrollbar {
+	display: none;
+}
+
+/* font */
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Happiness-Sans-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/Happiness-Sans-Bold.woff2') format('woff2');
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Happiness-Sans-Title';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/Happiness-Sans-Title.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+html, body {padding:0; margin:0;overflow-x:hidden;}
+
+*:not(input) {font-family: 'Happiness-Sans-Bold';}
+input::placeholder {font-family: 'Pretendard-Regular';color: #c7c2bc;}
+/* 상단 메뉴바 */
+.nav-menu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width:100%;
+	height: 200px;
+	transition: .5s;
+	z-index:999;
+}
+/* 스크롤 이벤트 */
+.nav-action {
+	position:fixed;
+	top:-45px;
+}
+.nav-action nav {
+	position:relative;
+	z-index: 9999;
+}
+.nav-action .logo {
+	top: -100px;
+	opacity:0;
+}
+/* 로고 */
+.logo {
+	position: absolute;
+	top:20px;
+	left: 80px;
+	width: 150px;
+	transition: .5s;
+}
+
+/* 상단 로그인 배경바 */
+.log-bar {
+	position:fixed;
+	top:0px;
+	width:100%;
+	height:50px;
+	transition:top .7s .2s, background .5s;
+}
+.log-action {
+/* 	position:fixed; */
+/* 	top:0; */
+	background:rgba(146,131,115,0.4);
+	z-index:9;
+}
+
+/* 로그인, 회원가입 버튼 */
+.log_btn {
+	position: fixed;
+	top: 10px;
+	right: 20px;
+	z-index:9999;
+}
+.log_btn button {
+	background: transparent;
+	border: none;
+	color:white;
+	cursor: pointer;
+}
+.log_btn button:first-child {border-right: 1px solid white;}
+
+/* 네비바 목록 */
+nav {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: 30px;
+	position: absolute;
+	top:0;
+	left:20%;
+	width:60%;
+	margin-top: 60px;
+	text-align: center;
+}
+nav > div {
+	padding-bottom: 5px;
+	overflow: hidden;
+}
+nav p, nav p:nth-child(1) > a {
+	color: white;
+	text-decoration: none;
+	font-family: 'Happiness-Sans-Title';
+	font-size:18px;
+	text-shadow: 0 0 10px rgba(0, 0, 0, .2);
+	cursor: pointer;
+	margin-top:0;
+}
+nav p:nth-child(2) {
+	display: grid;
+}
+nav p:nth-child(2) > a {
+	color: white;
+	text-decoration: none;
+	font-size: 16px;
+	padding: 5px 0;
+}
+
+/* 모션 */
+nav > div:hover:not(div:nth-child(1), div:nth-child(2)) {
+	height:100px;
+	overflow:visible;
+	padding: 10px 0 20px;
+	transition:.2s;
+}
+
+nav > div:hover:not(div:nth-child(1), div:nth-child(2)) > p:nth-child(2) {
+	opacity:0;
+	transition: .3s;
+}
+nav > div:hover:not(div:nth-child(1), div:nth-child(2)) > p:nth-child(2) {
+	padding: 10px 0;
+	opacity: 1;
+}
+/* 스크롤 이벤트 nav */
+.nav-action nav > div:hover:not(div:nth-child(1), div:nth-child(2)):after {
+	content:"";
+	position:fixed;
+	top:0;
+	left:0;
+	width: 100%;
+	height: 50%;
+	background: rgba(146,131,115,0.4);
+	backdrop-filter: blur(5px);
+	z-index:-1;
+	border-radius: 0 0 25px 25px;
+	box-shadow: 0 -5px 100px rgba(255,255,255,.4);
+}
+
+/* main */
+section {
+	height:100%;
+}
+
+.video-bg {
+	position: fixed;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    min-height: 100vh;
+    object-fit: cover;
+    transform: translateX(-50%);
+    z-index: -3;
+}
+
+/* 스크롤 이벤트 */
+.scroll_msg {
+	position: fixed;
+	bottom: 20%;
+	left: 50%;
+	transform: translateX(-50%);
+	padding: 20px 40px;
+	font-size: 18px;
+	color: white;
+}
+.scroll_bar {
+	position: fixed;
+	bottom: calc(20% - 40px);
+	left: 50%;
+	transform: translateX(-50%);
+	width: 1px;
+	height: 60px;
+	background: white;
+	animation: scale infinite 1.5s linear;
+}
+@keyframes scale {
+	100% {bottom: calc(20% - 50px);height: 50px;opacity:0;}
+}
+.scroll_nav_bar {
+	position: fixed;
+	top: calc(50% - 50px);
+	left: 60px;
+	width: 1.5px;
+	height: 100px;
+	background: #ddd;
+	z-index: 1;
+}
+
+.scroll_circle {
+	position: absolute;
+	top:-10px;
+	left: 50%;
+	transform: translateX(-50%);
+	transition: 1s;
+	width: 15px;
+	height: 15px;
+	border-radius: 15px;
+	background: #dc0000;
+	animation:sizeup .8s infinite linear alternate;
+}
+@keyframes sizeup {
+	100% {transform: translateX(-50%) scale(.6);}
+}
+.scroll_circle:after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 5px;
+	height: 5px;
+	background: white;
+	border-radius: 5px;
+}
+.scroll_circle_action1 {
+	top: calc(50% - 10px);
+}
+.scroll_circle_action2 {
+	top: calc(100% - 10px);
+	background: #8c7760;
+/* 	 #007fa8; */
+}
+
+/* main_info */
+.sct02 {
+	position:absolute;
+	top:100vh;
+	left:0;
+	z-index:1;
+	width:100%;
+	height: 100vh;
+	background: white;
+	opacity:.5;
+	transition: .3s;
+}
+.sct02-action {
+	opacity:1;
+}
+
+.sct02 > div {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: calc(100% - 280px);
+	height: calc(100% - 100px);
+	display: grid;
+	grid-template-columns: 60% 40%;
+}
+
+/* 메인 내용 박스 공통 */
+.main_cont {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	margin-top: 120px;
+	border-radius: 25px;
+	box-shadow: -2px -2px 20px #f7f3f2, -2px -2px 40px #f7f3f2;
+	overflow: hidden;
+}
+.main_scrl1 {width:100%;height:100%;padding:10px;}
+.main_scrl2, .main_scrl3 {width:90%;height:90%;}
+
+/* 메인 내용 스크롤 시 이벤트 */
+.main_scrl1_after {
+	margin-top:0;
+	transition: 1s;
+}
+.main_scrl2_after {
+	margin-top:0;
+	transition: 1s .15s;
+}
+.main_scrl3_after {
+	margin-top:0;
+	transition: 1s .3s;
+}
+
+/* 인기 차 리스트 */
+.popular_list {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.popular_list > div {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 90%;
+	height: 90%;
+	background: url("../car_images/car_bg.jpg") no-repeat center / cover;
+}
+div[class^="img"] {padding-top: 60px;}
+div[class^="img"] span {
+	margin-left: 50px;
+	background: #a5b99c;
+/* 	 #007fa8; */
+	color: white;
+	font-size:12px;
+	padding: 5px 10px;
+}
+div[class^="img"] h2 {
+	margin: 10px 0 0 50px;
+/* 	font-family: 'Happiness-Sans-Bold'; */
+	font-family: 'Happiness-Sans-Title';
+}
+div[class^="img"] h4 {
+	margin: 5px 0 0 50px;
+	font-weight:400;
+}
+/* 인기 차 리스트 - 캐러셀 */
+.slider {overflow:hidden;}
+.slider > div {
+	position: absolute;
+	bottom: 25%;
+}
+.slider > div:nth-child(1) {
+	left: 0;
+}
+.slider > div:nth-child(2) {
+	left: 0;
+	transform: translate(100%);
+}
+.slider > div:nth-child(3) {
+	left: 0;
+	transform: translate(200%);
+}
+/* div[class^="img"] *:not(img) { */
+/* 	margin-bottom: 100px; */
+/* } */
+.slider img {width:100%; height: 100%;}
+
+.slider label {
+	width: 50px;
+	height: 50px;
+	opacity:.3;
+	cursor: pointer;
+}
+
+.p1_last, .p2_first, .p3_middle { /* 1페이지에서 3페이지로 */
+	position: absolute;
+	top: 50%;
+	left: 10px;
+	background: url("../car_images/왼쪽버튼.jpg") no-repeat center / contain;
+}
+.p1_middle, .p2_last, .p3_first { /* 1페이지에서 2페이지로 */
+	position: absolute;
+	top: 50%;
+	right: 10px;
+	background: url("../car_images/오른쪽버튼.jpg") no-repeat center / contain;
+}
+input[name="slide"] {display: none;}
+/*--------------------------------------------*/
+#slide1:checked ~ .slider div:nth-child(1) {
+	transform: translate(-100%);
+	transition:1s;
+}
+#slide1:checked ~ .slider div:nth-child(2) {
+	transform: translate(0%);
+	transition:1s;
+}
+#slide1:checked ~ .slider div:nth-child(3) {
+	transform: translate(100%);
+	transition:1s;
+}
+#slide1:checked ~ .slider label[class^="p1"] {
+	visibility: hidden;
+}
+/*--------------------------------------------*/
+#slide2:checked ~ .slider div:nth-child(1) {
+	transform: translate(-100%);
+	transition:1s;
+}
+#slide2:checked ~ .slider div:nth-child(2) {
+	transform: translate(-100%);
+	transition:1s;
+}
+#slide2:checked ~ .slider div:nth-child(3) {
+	transform: translate(0);
+	transition:1s;
+}
+#slide2:checked ~ .slider label[class^="p1"] {
+	visibility: hidden;
+}
+#slide2:checked ~ .slider label[class^="p1"] {
+	visibility: hidden;
+}
+#slide2:checked ~ .slider label[class^="p2"] {
+	visibility: hidden;
+}
+/*--------------------------------------------*/
+#slide3:checked ~ .slider div:nth-child(1) {
+	transform: translate(0);
+	transition:1s .5s;
+}
+#slide3:checked ~ .slider div:nth-child(2) {
+	transform: translate(100%);
+	transition:1s .25s;
+}
+#slide3:checked ~ .slider div:nth-child(3) {
+	transform: translate(100%);
+	transition:.5s;
+}
+
+/* 예약 및 반납 날짜 확인 */
+.booking_check {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.booking_check > div > div {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 80%;
+	height: 100%;
+	overflow-y: scroll;
+}
+.book_cont {
+	display: grid;
+	grid-template-rows: repeat(2,1fr);
+	margin-top:20px;
+}
+.book_cont::-webkit-scrollbar {
+	display: none;
+}
+.booking_check p > input {
+	margin-left: 10px;
+	border-radius: 10px;
+	border: none;
+	background: #f3f3f3;
+	width: 80%;
+	padding: 5px 0;
+	text-align: center;
+}
+.booking_check button {
+	background: #72846a;
+/* 	 #002c5f; */
+	border: none;
+	color: white;
+	width: 100%;
+	height: 40px;
+	cursor: pointer;
+}
+
+/* .booking_check > div > div > button { */
+/* 	position: absolute; */
+/* 	bottom: 10%; */
+/* 	left: 50%; */
+/* 	transform: translateX(-50%); */
+/* 	width: 80%; */
+/* 	padding: 10px 0; */
+/* } */
+
+
+/* 공지 사항 */
+.notice_box {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.main_notibox {
+	position: absolute;
+/* 	border: none; */
+	width: 100%;
+	height: 100%;
+	top: 50%;
+	transform: translateY(-50%);
+	text-align: center;
+	white-space: nowrap;     /* 개행(엔터) 없애기 */
+	overflow: hidden;        /* 영역 넘어가는 것 숨기기 */
+	text-overflow: ellipsis;
+}
+.main_notibox td:first-child {
+	width: 70%;
+}
+.main_notibox td {
+/* 	border: none; */
+	white-space: nowrap;     /* 개행(엔터) 없애기 */
+	overflow: hidden;        /* 영역 넘어가는 것 숨기기 */
+/* 	text-overflow: ellipsis; */
+}
+/* 예약, 공지 부모*/
+.sct02 > div > div:last-child {
+	display: grid;
+	grid-template-rows: repeat(2, 1fr);
+	width: 100%;
+	height: 100%;
+}
+
+/* 반응형 */
+@media all and (max-width: 600px) {
+	.sct02 > div {
+		position: absolute;
+		top:50%;
+		left: 50%;
+		width: 100%;
+		height: 100%;
+		padding: 0 50px;
+	}
+	.sct02 > div > div {
+		position: absolute;
+		top:0;
+		left:0;
+		width: 100%;
+		height: 100%;
+	}
+/* 	.popular_list { */
+/* 		position: absolute; */
+/* 		top:0; */
+/* 		left:0; */
+/* 		width: 100%; */
+/* 		height: 100%; */
+/* 	} */
+	.scroll_nav_bar, .scroll_circle {
+		opacity:0;
+		visibility: hidden;
+		transition:.3s;
+	}
+	.sct02 > div > div:last-child {
+		display: none !important
+	}
+}
+@media all and (max-width: 830px) {
+	.sct02 > div {
+		width: calc(100% - 240px);
+		height: calc(100% - 120px);
+		display: grid;
+		grid-template-columns: 100%;
+		grid-template-rows: 55% 45%;
+	}
+	.sct02 > div > div:last-child {
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(1, 1fr);
+		height:100%;
+		width:100%;
+	}
+}
+@media all and (max-width: 1024px) {
+	.logo {
+	opacity:0;
+	width: 0;
+	transition:.5s;
+	}
+}
+@media screen and (max-width: 1200px) {
+	.booking_check > div > div > button {
+		position: absolute;
+		bottom: 10px;
+/* 		left: 50%; */
+/* 		transform: translateX(-50%); */
+/* 		width: 80%; */
+		padding: 5px 0;
+	}
+}

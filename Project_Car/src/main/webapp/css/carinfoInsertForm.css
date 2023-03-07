@@ -1,0 +1,37 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'Happiness-Sans-Title';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/Happiness-Sans-Title.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+* {font-family: 'Happiness-Sans-Title';}
+body {
+	height: 100vh;
+	background-color: #f5f6f7;
+}
+
+form {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: #e4dcd3;
+	border-radius: 20px;
+	padding:40px 30px;
+}
+
+input:not(input[type="file"], input[type="submit"]) {
+	border-radius: 20px;
+	background: #f5f6f7;
+	border: none;
+	padding: 8px;
+}
+
+input[type="submit"] {
+	background:#a5b99c;
+	padding: 5px 15px;
+	font-size: 18px;
+	border: none;
+	border-radius: 5px;
+}

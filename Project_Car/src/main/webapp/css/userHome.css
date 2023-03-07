@@ -1,0 +1,96 @@
+@charset "UTF-8";
+/* font */
+@font-face {
+    font-family: 'Happiness-Sans-Title';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/Happiness-Sans-Title.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width:100%;
+	height: 100px;
+	
+/* 	background: #00967f; */
+}
+
+.logo {
+	position: absolute;
+	left: 80px;
+	bottom:-20px;
+	width: 150px;
+}
+
+.gnb_serch_box {
+	position: absolute;
+	top:50%;
+	left:calc(50% - 250px);
+	width:500px;
+	height: 40px;
+	border-radius: 20px;
+	border: none;
+	background: rgba(255,255,255,.5);
+	text-align: center;
+	color: white;
+}
+.header_menu {
+	position: absolute;
+	top: 10px;
+	right: 20px;
+}
+.header_menu button {
+	background: transparent;
+	border: none;
+	color:white;
+	cursor: pointer;
+}
+.header_menu button:first-child {border-right: 1px solid white;}
+/* main */
+html, body {
+	position: relative;
+	padding:0;
+	margin:0;
+}
+section {
+	height:100%;
+}
+.gnb_navibar {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	position: absolute;
+	top:20%;
+	left:20%;
+	width:60%;
+	height: 50%;
+	margin-top: 120px;
+	text-align: center;
+	
+/* 	border-bottom: 1px solid white; */
+}
+.gnb_navibar a {
+	color: white;
+	text-decoration: none;
+	font-family: 'Happiness-Sans-Title';
+	font-size:18px;
+	text-shadow: 0 0 10px rgba(0, 0, 0, .2);
+}
+.main_video {
+	position:relative;
+}
+.video-bg {
+	position: relative;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    min-height: 100vh;
+    object-fit: cover;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+/* main_info */
+
+.sec02 {position:relative; top:0; left:0;
+width:100%; height: 100%;}

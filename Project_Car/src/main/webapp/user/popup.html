@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml+xml;charset=utf-8" />
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script>
+	//쿠키설정	
+	function setCookie( name, value, expiredays )
+	{
+    var todayDate = new Date();
+    todayDate.setDate( todayDate.getDate() + expiredays );
+    document.cookie = name + '=' + escape( value ) + '; path=/; expires=' + todayDate.toGMTString() + ';'
+	}
+
+	//쿠키 불러오기
+	function getCookie(name) 
+	{ 
+	    var obj = name + "="; 
+	    var x = 0; 
+	    while ( x <= document.cookie.length ) 
+	    { 
+	        var y = (x+obj.length); 
+	        if ( document.cookie.substring( x, y ) == obj ) 
+	        { 
+	            if ((endOfCookie=document.cookie.indexOf( ";", y )) == -1 ) 
+	                endOfCookie = document.cookie.length;
+	            return unescape( document.cookie.substring( y, endOfCookie ) ); 
+	        } 
+	        x = document.cookie.indexOf( " ", x ) + 1; 
+	        if ( x == 0 ) 
+	            break; 
+	    } 
+	    return ""; 
+	}
+		
+	//닫기 버튼 클릭시
+	function closeWin(key)
+	{
+	    if($("#todaycloseyn").prop("checked"))
+	    {
+	        setCookie('divpop'+key, 'Y' , 1 );
+	    }
+	    $("#divpop"+key+"").hide();
+	}
+  
+	$(function(){	
+
+		if(getCookie("divpop1") !="Y"){
+			$("#divpop1").show();
+		}
+
+	});
+</script>
+<style type="text/css">
+  .divpop {
+     position: absolute; z-index:999; top:100px; left:50px;
+     width:350px; height:350px; border:1px solid #dcdcdc; background: white; display:none;
+  	border-radius: 15px; padding: 30px;
+  }
+  .title_area {font-weight:bold;text-align:center;width:100%;  }
+  .button_area {position:absolute;bottom:20px;left:30px; text-decoration:none; } 
+
+
+</style>
+</head>
+<body>
+<form name="notice_form">
+	
+	<div id="divpop1" class="divpop">	
+		<div class="title_area">카차차 공지사항</div>
+		
+		<p style="background: url('user/팝업창.png') no-repeat center / cover; width:350px;height: 300px;">
+<!-- 		<img src="팝업창.png" width=350 height=300 usemap="#popup" alt="event page"> -->
+ 		</p>
+ 		<div class="button_area">
+	 		<input type='checkbox' name='chkbox' id='todaycloseyn' value='Y'><b>오늘 하루동안 보지 않음</b>    	
+ 			<a href='#' onclick="javascript:closeWin(1);"><B>[닫기]</B></a>
+ 		</div>
+	</div>
+	
+	</form>
+	<!-- layer popup content -->
+<!-- <div class="layerPopup" id="layer_popup" style="visibility: visible;"> -->
+<!--     <div class="layerBox"> -->
+<!--         <h4 class="title">카차차 공지사항</h4> -->
+<!--         <div class="cont"> -->
+<!--             <p> -->
+<!-- 			<img src="./images/아메리카노.png" width=350 height=300 usemap="#popup" alt="event page"> -->
+<!--             </p> -->
+<!--         </div> -->
+<!--           <form name="pop_form"> -->
+<!--         <div id="check" > -->
+<!--         <input type='checkbox' name='chkbox' id='todaycloseyn' value='Y'> -->
+<!--         <label for="chkbox">오늘 하루동안 보지 않기</label></div> -->
+<!--       <div id="close" ><a href='#' onclick="javascript:closeWin(1);"><B>[닫기]</B></div>     -->
+<!--       </form> -->
+<!--    </div> -->
+<!-- </div> -->
+	
+	
+
+</body>
+</html>

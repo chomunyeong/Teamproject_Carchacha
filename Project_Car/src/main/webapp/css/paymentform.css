@@ -1,0 +1,46 @@
+@charset "UTF-8";
+#wrapper {
+	position: relative;
+	display: block;
+/* 	grid-template-columns: 50px calc(100% - 50px); */
+	width: 100%;
+	height: auto;
+	background: url('../car_images/하늘.jpg') no-repeat top / auto 380px, #f5f6f7;
+	padding: 430px 0 50px;
+	text-align: center;
+}
+#wrapper:after {
+	content:'차량 결제';
+	position: absolute;
+	top:190px;
+	left:50%;
+	transform: translate(-50%);
+	font-size:2em;
+}
+table {
+	margin: 0 auto;
+	padding: 30px;
+	background: rgb(228, 220, 211, .5);
+}
+table tr {
+	margin-bottom: 5px;
+}
+table th {
+	padding: 5px 12px;
+}
+table th:first-child {
+	border-radius: 20px;
+	background:#e4dcd3;
+}
+input#order {
+	background:#a5b99c;
+	margin-top: 10px;
+	border: none;
+	font-size: 24px;
+	padding: 10px 120px;
+	color: #f5f6f7;
+	border-radius: 10px;
+}
+input#order:hover {
+	background: #72846a;
+}

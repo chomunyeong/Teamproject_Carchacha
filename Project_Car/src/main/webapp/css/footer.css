@@ -1,0 +1,30 @@
+@charset "UTF-8";
+/* font */
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'RixYeoljeongdo_Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2102-01@1.0/RixYeoljeongdo_Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/* 하단 */
+#footer {
+	position: relative;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	border-top: 1px solid #e4dcd3;
+}
+
+#footer > div:first-child {
+	padding: 40px 0 20px 140px;
+}
+#footer > div:last-child {
+	padding: 40px 0 20px 200px;
+}
+#footer > div p {color:#d0d0d0; font-family: 'Pretendard-Regular';font-size: 13px;line-height:5px;}
+#footer > div .number {font-size:30px; font-size: 32px;color:#e4dcd3;font-family: 'RixYeoljeongdo_Regular';}

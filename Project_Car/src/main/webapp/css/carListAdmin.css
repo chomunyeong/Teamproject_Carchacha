@@ -1,0 +1,122 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Happiness-Sans-Title';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/Happiness-Sans-Title.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {font-family: 'Pretendard-Regular';}
+
+a {color: #72846a;text-decoration: none;}
+body {
+  padding:1.5em;
+  background: #f5f5f5;
+}
+
+tbody {
+    color: black;
+    align-content: center;
+}
+
+body > table {
+/* 	border: 1px #a39485 solid; */
+	font-size: .5em;
+/* 	box-shadow: 0 2px 5px rgba(0,0,0,.25); */
+	width: 600px;
+	height: 100px;
+	border-collapse: collapse;
+	border-radius: 5px;
+	overflow: hidden;
+	padding: 50px 100px 50px;
+	margin: 100px auto auto auto;
+}
+
+.menu {
+  font-weight: bold;
+  color: #fff;
+  background: #e4dcd3;
+}
+
+hr {
+	width: 80%;
+}
+
+.hr-solid {
+	border: 3px;
+	border-top: 2px solid #72846a;
+}
+body > table td {
+	padding: 1em .5em;
+	vertical-align: middle;
+}
+
+table td > table {
+	margin: 0 auto;
+	border: 1px #a39485 solid;
+	font-size: .5em;
+	box-shadow: 0 2px 5px rgba(0,0,0,.25);
+	width: 600px;
+	height: 100px;
+	border-collapse: collapse;
+	border-radius: 5px;
+	overflow: hidden;
+	padding: 50px 100px 50px;
+/* 	background: #f5f5f5; */
+}
+table td > table td {
+	background: white;
+	border: 1px solid #f5f6f7;
+	padding: 5px 0;
+	text-align: center;
+	font-size: 14px;
+}
+.btn_carlist {
+	border-top-left-radius:5px;
+	border-bottom-left-radius:5px;
+	border-top-right-radius:5px;
+	border-bottom-right-radius:5px;
+	margin-left:-3px;
+	border: 1px solid;
+	background-color: #72846a;
+	color: white;
+	padding: 5px;
+	text-align: center;
+	display: inline-block;
+}
+
+.btn_carlist:hover{
+	color:white;
+	background-color: #a5b99c;
+}
+
+.btn_1, .btn_2, .a_tag {
+	text-align:center;
+}
+.btn_2 {
+	position: fixed;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	padding: 5px 100px;
+	background: #a5b99c;
+	border-radius: 0 0 15px 15px;
+	box-shadow: 0 3px 5px rgba(0,0,0,.1);
+}
+.btn_2 input {
+	font-size: 14px;
+	color: #f5f6f7;
+	font-family: 'Happiness-Sans-Title';
+	border: none;
+	background: transparent;
+	cursor: pointer;
+}
+.btn_2 input:hover {
+	color: #72846a;
+}

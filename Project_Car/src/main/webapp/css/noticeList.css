@@ -1,0 +1,106 @@
+@charset "EUC-KR";
+@font-face {
+     font-family: 'S-CoreDream-3Light';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+} * {font-family: 'S-CoreDream-3Light';}
+/* a태그 기본값 없애기 */
+a {
+	text-decoration: none;
+	color: black;
+}
+
+
+/* 전체 div */
+#wrapper {
+	display: grid;
+	grid-template-rows: 380px auto;
+}
+
+
+/* 탑 부분 이미지 + 내용(검색) */
+.notice_top {
+	position: relative;
+	width: 100%;
+	height: 380px;
+	background: url('../car_images/하늘.jpg') no-repeat right / cover;
+}
+.notice_title {
+	margin-top:100px;
+}
+.notice_title form {
+	position: absolute;
+	bottom:50px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+/* 내용 가운데 정렬 */
+.notice_title * {text-align: center;}
+
+.notic_title_cont a {
+	white-space: break;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+/* 공지 테이블 */
+.notice_cont {
+	position: relative;
+	margin: 150px auto 100px;
+	width: 100%;
+}
+.page_box {font-size: 12px; color: gray;}
+.notice_table {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.notice_table tr:nth-child(2n):not(tr:nth-child(2)) {
+	background: rgb(241, 239, 237);
+}
+.notice_table tr:nth-child(2) {
+	background: rgb(230, 219, 207);
+}
+.notice_table tr:not(tr:nth-child(2)) {
+	transition: .2s;
+}
+.notice_table tr:not(tr:nth-child(2)):hover {
+	background: #ddd3cc;
+}
+.notice_table td:not(tr:first-child td) {
+	padding: 5px 0;
+	margin: 0 !important;
+	text-align: center;
+}
+.notice_list {text-align: center;}
+.notice_list a:not(.list_num) {
+	background: #a5b99c;
+    padding: 2px 5px;
+    border-radius: 5px;
+    color: #f5f6f7;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.list_num {margin-left: 2px;color:#72846a;}
+
+.write_btn {
+	position: absolute;
+	bottom: 25px;
+	right: 180px;
+	background: #72846a;
+	color: #f5f6f7;
+	border: none;
+	font-size: 16px;
+	padding: 5px 8px;
+	border-radius: 3px;
+	cursor: pointer;
+}
+.search_btn {
+	background: #a5b99c;
+	color: #f5f6f7;
+	border: none;
+	font-size: 16px;
+	padding: 5px 8px;
+	border-radius: 3px;
+}

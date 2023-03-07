@@ -1,0 +1,56 @@
+@charset "EUC-KR";
+
+body {
+	background-color: #f5f5f5;
+}
+
+#wrapper {
+	position: relative;
+	text-align: center;
+	padding: 380px 100px 100px;
+	background: url('../car_images/하늘.jpg') no-repeat top / auto 380px;
+}
+
+#wrapper:after {
+	content:'차량 이용안내';
+	position: absolute;
+	top: 190px;
+	left:50%;
+	transform: translateX(-50%);
+	font-size:2em;
+	
+}
+
+h2 {
+	padding: 10px; 
+	border:5px double #848484;
+	border-color: #f5f6f7;
+	border-radius:80px;
+	width: 300px;
+	margin: auto;
+	background: #e4dcd3;
+	color: white;
+}
+
+h6 {
+/* 	border: 3px solid ; */
+	padding: 3px;
+	background: #a5b99c;
+	color: white;
+	width: 50px;
+	margin: auto;
+}
+
+table {
+	border: 1px #a39485 solid;
+	font-size: .5em;
+	box-shadow: 0 2px 5px rgba(0,0,0,.25);
+	width: 600px;
+	height: 100px;
+	border-collapse: collapse;
+	border-radius: 5px;
+	overflow: hidden;
+	padding: 50px 100px 50px;
+	margin: 100px auto auto auto;
+	background: #f5f5f5;
+}

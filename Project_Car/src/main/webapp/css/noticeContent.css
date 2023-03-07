@@ -1,0 +1,88 @@
+@charset "UTF-8";
+
+/* body {height: 100vh;} */
+#wrapper {
+	position: relative;
+	display: block;
+/* 	grid-template-columns: 50px calc(100% - 50px); */
+	width: 100%;
+	height: auto;
+	background: url('../car_images/하늘.jpg') no-repeat top / auto 380px, #f5f6f7;
+	padding: 430px 0 50px;
+}
+#wrapper:after {
+	content:'공지사항';
+	position: absolute;
+	top:190px;
+	left:50%;
+	transform: translate(-50%);
+	font-size:2em;
+	
+}
+
+#wrapper > .notice2 {
+	position: relative;
+}
+#wrapper > .notice2 > form {
+	text-align: center;
+}
+/* .my_page {padding: 50px auto;} */
+.notice table:not(.a) {
+	padding: 30px 100px;
+	width: 800px;
+	background: rgb(228, 220, 211, .5);
+	margin: 50px auto;
+}
+.notice table td {
+	padding: 5px 10px;
+}
+.notice table td > input:not(.update_input, .a), input[type="submit"] {
+	width: 100%;
+	border: none;
+	border-radius: 50px;
+	background: rgb(228, 220, 211);
+	text-align:center;
+	padding: 5px 0;
+}
+.notice input[type="button"] {
+	width: 100%;
+	border: none;
+	border-radius: 50px;
+	background: rgb(228, 220, 211);
+	text-align:center;
+	padding: 5px 0;
+}
+
+.update_input {
+	margin: 10px;
+	padding: 15px 100px;
+}
+
+textarea {
+	 background-color: #E4DCD3;
+	 border: 0px;
+	 width:100%;
+}
+
+.a {
+/* 	padding: 30px 100px; */
+	width: 1500px;
+	margin: 50px auto;
+	border-collapse: collapse;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

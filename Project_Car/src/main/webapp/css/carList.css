@@ -1,0 +1,88 @@
+@charset "UTF-8";
+body {background: url('../car_images/하늘.jpg') no-repeat top / auto 380px, #f5f6f7;}
+#wrapper {
+	padding: 5%;
+}
+#wrapper:after {
+	content:'차량 목록';
+	position: absolute;
+	top:190px;
+	left:50%;
+	transform: translateX(-50%);
+	font-size:2em;
+}
+
+#wrapper > #container {
+	position: relative;
+	display: grid;
+	margin: 230px 20px;
+	height: 100%;
+}
+
+#wrapper > #container > div {
+	position: relative;
+}
+#wrapper > #container > div > a > img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 90%;
+}
+#wrapper > #container > div > input[type="submit"] {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	background: #e4dcd3;
+	color: white;
+	padding: 7px 10%;
+	border: 2px solid #e4dcd3;
+	font-size: 12px;
+	cursor: pointer;
+}
+#wrapper > #container > div > label {
+	position: absolute;
+	color: lightgray;
+	font-size:25px;
+	cursor: pointer;
+}
+.update_btn {
+	position: fixed;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+	width: 50px;
+	height: 200px;
+	background: #a5b99c;
+	border: none;
+	font-size: 18px;
+	color: #f5f6f7;
+	border-radius: 0 15px 15px 0;
+	cursor: pointer;
+	box-shadow: 0 3px 5px rgba(0,0,0,.1);
+}
+.update_btn:hover {
+	color: #72846a;
+}
+input[id^="likeBtn"] {display: none;}
+input[id^="likeBtn"]:checked + label {font-size:0 !important;}
+input[id^="likeBtn"]:checked + label:after {content:'♥';  font-size: 25px; color: red;}
+/* 반응형 레이아웃 */
+@media all and (min-width: 320px) {
+	#wrapper > #container {grid-template-columns: repeat(1, 1fr);}
+	#wrapper > #container > div {height: 200px;}
+	#wrapper > #container > div > input[type="submit"] {bottom: 0;}
+	#wrapper > #container > div > label[for^="likeBtn"] {top:10px; right:20px; }
+}
+@media all and (min-width: 500px) {
+	#wrapper > #container {grid-template-columns: repeat(2, 1fr);}
+	#wrapper > #container > div {height: 300px;}
+	#wrapper > #container > div > input[type="submit"] {bottom: 50px;}
+	#wrapper > #container > div > label[for^="likeBtn"] {top:50px; right:20px;}
+}
+@media all and (min-width: 900px) {
+	#wrapper > #container {grid-template-columns: repeat(3, 1fr);}
+	#wrapper > #container > div {height: 450px;}
+	#wrapper > #container > div > input[type="submit"] {bottom: 100px;}
+	#wrapper > #container > div > label[for^="likeBtn"] {top:100px; right:20px;}
+}
